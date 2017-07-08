@@ -1,0 +1,12 @@
+/**
+ * Created by koteswarao on 08-07-2017.
+ */
+
+var path = require("path");
+var config = require(path.join(__dirname, "..", "config"));
+var MongoClient = require("mongodb").MongoClient;
+
+
+exports.execute = function (name) {
+    console.log("hello " + name);
+};
