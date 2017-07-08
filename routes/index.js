@@ -4,24 +4,49 @@ var path = require('path');
 var config = require(path.join(__dirname, "..", "config"));
 var ip = require("ipware");
 var userIp = ip().get_ip;
-var mongo = require(__dirname + "/../MongoOperations/connect");
-var MongoClient = require("mongodb").MongoClient;
+var mongoConnector = require(__dirname + "/../MongoOperations/connect");
+var fs = require("fs");
 
 
+var request;
+var cameFrom;  // site that redirected user to this
 
+
+var onConnected = function (error, database, request) {
+    database.collection("new").find().toArray(function (p1, p2) {
+        if (!error) insertIpOfThisUser(database);
+    });
+};
+
+function User(ip) {
+    this.ip = ip;
+    this.count = 0;
+}
+
+
+var insertIpOfThisUser = function (database) {
+
+    var user = new User(userIp(request));
+    var thisIp = user.ip;
+    database.collection(config.mongoCollectionName).find({
+
+    });
+};
 
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
 
-    MongoClient.connect(config.mongoUri, function (error, database) {
+router.get('/:cameFrom', function (req, res, next) {
+    //mongoConnector.execute(onConnected);
+    request = req;
+    cameFrom = req.params['cameFrom'];
+});
 
-        database.collection("new").find().toArray(function (p1, p2) {
-            res.send(p2);
-        });
-        mongo.execute("bk");
-    });
+router.get('/', function (req, res) {
 
+    fs.readFile(__dirname + "/../public/MyProfile.html", "utf8", function (err, resp) {
+        res.send(resp);
+    })
 });
 
 module.exports = router;
