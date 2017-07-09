@@ -3,8 +3,10 @@
  */
 
 var config = {
-    db: "my-personal-website",
-    mongoUri: "mongodb://practice:practice@cluster0-shard-00-00-shj3q.mongodb.net:27017,cluster0-shard-00-01-shj3q.mongodb.net:27017,cluster0-shard-00-02-shj3q.mongodb.net:27017/" + this.db + "?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin",
+    db: "my_website",
+    db_user: "bvsbrk",
+    db_password: "9966154851",
+    mongoUri: 'mongodb://' + this.db_user + ':' + this.db_password + '@ds153422.mlab.com:53422/my_website',
     mongoCollectionName: "bharat-koteswarao",
     herokuAppName: this.mongoCollectionName
 };
