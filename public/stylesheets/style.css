@@ -104,7 +104,15 @@ ul {
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
-    transition-duration: 0.5s;
+    transition-duration: 0.3s;
+}
+
+#me-tab {
+    border-top-left-radius: 7px;
+}
+
+#blog-tab {
+    border-top-right-radius: 7px;
 }
 
 #me-tab:hover {
@@ -114,10 +122,6 @@ ul {
 
 #me-tab:active {
     background-color: #2e7d32;
-}
-
-#me-tab:active #me-a {
-    color: white;
 }
 
 #my-skills-tab:hover {
