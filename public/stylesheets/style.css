@@ -6,6 +6,13 @@ html, body {
     height: 100%;
 }
 
+#me-a, #blog-a, #skills-a {
+    text-decoration: none !important;
+    color: #2e7d32;
+    font-family: tabFont, serif;
+    font-size: medium;
+}
+
 .top-part {
     background-color: #2e7d32;
     width: 100%;
@@ -97,25 +104,37 @@ ul {
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
+    transition-duration: 0.5s;
 }
 
 #me-tab:hover {
     background-color: #d3d3d3;
+    border-top-left-radius: 7px;
 }
 
-#me-tab:focus {
-    background-color: black;
+#me-tab:active {
+    background-color: #2e7d32;
 }
 
-#me-tab:target {
-    background-color: black;
+#me-tab:active #me-a {
+    color: white;
 }
 
-a {
-    text-decoration: none !important;
-    color: #2e7d32 !important;
-    font-family: tabFont, serif;
-    font-size: medium;
+#my-skills-tab:hover {
+    background-color: #d3d3d3;
+}
+
+#my-skills-tab:active {
+    background-color: #2e7d32;
+}
+
+#blog-tab:hover {
+    background-color: #d3d3d3;
+    border-top-right-radius: 7px;
+}
+
+#blog-tab:active {
+    background-color: #2e7d32;
 }
 
 @font-face {
