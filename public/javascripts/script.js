@@ -94,8 +94,8 @@ function setSkillsBar() {
 }
 
 $(document).ready(function () {
-    setUpCurrentTab($("#my-skills-tab"), $("#skills-a"));
-    setThisFragment("center");
+    setUpCurrentTab($("#me-tab"), $("#me-a"));
+    setThisFragment("left");
     handleOnclicksForTabs();
     setSkillsBar();
 });
