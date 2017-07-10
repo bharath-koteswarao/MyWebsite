@@ -40,6 +40,7 @@ router.get('/:cameFrom', function (req, res, next) {
     //mongoConnector.execute(onConnected);
     request = req;
     cameFrom = req.params['cameFrom'];
+    res.send(cameFrom);
 });
 
 router.get('/', function (req, res) {

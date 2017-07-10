@@ -6,6 +6,7 @@
     <title>Welcome</title>
     <script type="text/javascript" src="javascripts/jquery.js"></script>
     <script type="text/javascript" src="javascripts/script.js"></script>
+    <link rel="stylesheet" href="stylesheets/graph.css"/>
     <link rel="stylesheet" href="stylesheets/style.css"/>
     <link rel="stylesheet" href="stylesheets/w3.css">
     <link rel="stylesheet" href="stylesheets/bootstrap.css"/>
@@ -16,8 +17,6 @@
 <div class="container-fluid main-body">
     <div class="top-and-bottom">
         <div class="top-part">
-            <!--<div class="main-picture img-circle">-->
-            <!--</div>-->
         </div>
         <div class="bottom-part">
             <!--facebook, github, google play developer page,hackerrank,codeforces,spoj-->
@@ -28,10 +27,40 @@
         <div class="content-card">
             <div class="content-nav">
                 <ul class="tabs">
-                    <li id="me-tab"><a href="#me" id="me-a">ME</a></li>
-                    <li id="my-skills-tab"><a href="#my-skills" id="skills-a">MY SKILLS</a></li>
-                    <li id="blog-tab"><a href="#blog" id="blog-a">BLOG</a></li>
+                    <li id="me-tab"><a href="#" id="me-a">ME</a></li>
+                    <li id="my-skills-tab"><a href="#" id="skills-a">MY SKILLS</a></li>
+                    <li id="blog-tab"><a href="#" id="blog-a">BLOG</a></li>
                 </ul>
+            </div>
+            <div class="fragments">
+                <div id="me-frag">
+                    <table class="me-table" align="center" cellspacing="10px">
+                        <tr>
+                            <td align="center">
+                                <img src="images/small.png" width="100px" height="100px" class="w3-circle">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="bharat-koteswarao">
+                                Bharat Koteswarao
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="developer">
+                                Android and Web developer
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="drop-a-message">
+                        <button class="btn btn-default w3-ripple">Drop me a message !!</button>
+                    </div>
+                </div>
+                <div id="skills-frag" style="display: none">
+                   
+                </div>
+                <div id="blog-frag" style="display: none">
+
+                </div>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
  * Created by koteswarao on 09-07-2017.
  */
 
-function setTabBackground(tab, anchor, tabPos) {
+function initializeFirstTab(tab, anchor, tabPos) {
     tab.css({
         backgroundColor: "#2e7d32"
     });
@@ -33,28 +33,55 @@ function resetOthers(tabElementsArray) {
     }
 }
 
-$(document).ready(function () {
+function setThisFragment(position) {
+    switch (position) {
+        case "left":
+            $("#me-frag").css({display: "block"});
+            $("#skills-frag").css({display: "none"});
+            $("#blog-frag").css({display: "none"});
+            break;
+        case "center":
+            $("#me-frag").css({display: "none"});
+            $("#skills-frag").css({display: "block"});
+            $("#blog-frag").css({display: "none"});
+            break;
+        default:
+            $("#me-frag").css({display: "none"});
+            $("#skills-frag").css({display: "none"});
+            $("#blog-frag").css({display: "block"});
+            break;
+    }
+}
+function handleOnclicksForTabs() {
     $("#me-tab,#blog-tab,#my-skills-tab").click(function () {
         var tabElementsArray;
         switch ($(this).attr("id")) {
             case "me-tab": {
-                setTabBackground($(this), $("#me-a"));
+                initializeFirstTab($(this), $("#me-a"));
                 tabElementsArray = [$("#blog-tab"), $("#my-skills-tab"), $("#blog-a"), $("#skills-a")];
                 resetOthers(tabElementsArray);
+                setThisFragment("left");
                 break;
             }
             case "blog-tab": {
-                setTabBackground($(this), $("#blog-a"));
+                initializeFirstTab($(this), $("#blog-a"));
                 tabElementsArray = [$("#me-tab"), $("#my-skills-tab"), $("#me-a"), $("#skills-a")];
                 resetOthers(tabElementsArray);
+                setThisFragment("right");
                 break;
             }
             default: {
-                setTabBackground($(this), $("#skills-a"));
+                initializeFirstTab($(this), $("#skills-a"));
                 tabElementsArray = [$("#me-tab"), $("#blog-tab"), $("#me-a"), $("#blog-a")];
                 resetOthers(tabElementsArray);
+                setThisFragment("center");
                 break;
             }
         }
-    })
+    });
+
+}
+$(document).ready(function () {
+    initializeFirstTab($("#me-tab"), $("#me-a"));
+    handleOnclicksForTabs();
 });
