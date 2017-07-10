@@ -2,7 +2,7 @@
  * Created by koteswarao on 09-07-2017.
  */
 
-function initializeFirstTab(tab, anchor, tabPos) {
+function setUpCurrentTab(tab, anchor, tabPos) {
     tab.css({
         backgroundColor: "#2e7d32"
     });
@@ -52,26 +52,27 @@ function setThisFragment(position) {
             break;
     }
 }
+
 function handleOnclicksForTabs() {
     $("#me-tab,#blog-tab,#my-skills-tab").click(function () {
         var tabElementsArray;
         switch ($(this).attr("id")) {
             case "me-tab": {
-                initializeFirstTab($(this), $("#me-a"));
+                setUpCurrentTab($(this), $("#me-a"));
                 tabElementsArray = [$("#blog-tab"), $("#my-skills-tab"), $("#blog-a"), $("#skills-a")];
                 resetOthers(tabElementsArray);
                 setThisFragment("left");
                 break;
             }
             case "blog-tab": {
-                initializeFirstTab($(this), $("#blog-a"));
+                setUpCurrentTab($(this), $("#blog-a"));
                 tabElementsArray = [$("#me-tab"), $("#my-skills-tab"), $("#me-a"), $("#skills-a")];
                 resetOthers(tabElementsArray);
                 setThisFragment("right");
                 break;
             }
             default: {
-                initializeFirstTab($(this), $("#skills-a"));
+                setUpCurrentTab($(this), $("#skills-a"));
                 tabElementsArray = [$("#me-tab"), $("#blog-tab"), $("#me-a"), $("#blog-a")];
                 resetOthers(tabElementsArray);
                 setThisFragment("center");
@@ -81,7 +82,20 @@ function handleOnclicksForTabs() {
     });
 
 }
+
+function setSkillsBar() {
+    $('#skillbar-area2').skillbars({
+        color: '#2e7d32',
+        style: 3,
+        showLevel: true,
+        animate: true,
+        speed: 1000
+    });
+}
+
 $(document).ready(function () {
-    initializeFirstTab($("#me-tab"), $("#me-a"));
+    setUpCurrentTab($("#my-skills-tab"), $("#skills-a"));
+    setThisFragment("center");
     handleOnclicksForTabs();
+    setSkillsBar();
 });
