@@ -52,7 +52,7 @@ router.get('/', function (req, res) {
 
 router.get('/privacy-policy', function (req, res) {
 
-    fs.readFile(__dirname + "/../public/privacyPolicy.html", "utf8", function (err, resp) {
+    fs.readFile(__dirname + "/../public/privacy-policy.html", "utf8", function (err, resp) {
         res.send(resp);
     })
 
