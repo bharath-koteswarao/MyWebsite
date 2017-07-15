@@ -93,9 +93,23 @@ function setSkillsBar() {
     });
 }
 
+function fetchUserLocation() {
+    $.ajax({
+        url: "https://freegeoip.net/json/",
+        success: function (response) {
+            var location = new LocationModel(response);
+        }
+    });
+}
+
+function LocationModel(userInfo) {
+    this.origin = userInfo['latitude'] + "," + userInfo['longitude'];
+}
+
 $(document).ready(function () {
     setUpCurrentTab($("#my-skills-tab"), $("#skills-a"));
     setThisFragment("center");
     handleOnclicksForTabs();
     setSkillsBar();
+    fetchUserLocation();
 });

@@ -36,7 +36,7 @@ var insertIpOfThisUser = function (database) {
 
 /* GET home page. */
 
-router.get('/:cameFrom', function (req, res, next) {
+router.get('/sites/:cameFrom', function (req, res, next) {
     //mongoConnector.execute(onConnected);
     request = req;
     cameFrom = req.params['cameFrom'];
@@ -48,6 +48,14 @@ router.get('/', function (req, res) {
     fs.readFile(__dirname + "/../public/MyProfile.html", "utf8", function (err, resp) {
         res.send(resp);
     })
+});
+
+router.get('/privacy-policy', function (req, res) {
+
+    fs.readFile(__dirname + "/../public/privacyPolicy.html", "utf8", function (err, resp) {
+        res.send(resp);
+    })
+
 });
 
 module.exports = router;
