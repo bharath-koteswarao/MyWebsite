@@ -7,7 +7,7 @@ var config = {
     db_user: "bvsbrk",
     db_password: "9966154851",
     mongoUri: 'mongodb://' + this.db_user + ':' + this.db_password + '@ds153422.mlab.com:53422/my_website',
-    mongoCollectionName: "bharat-koteswarao",
+    mongoCollectionName: "siteStats",
     herokuAppName: this.mongoCollectionName
 };
 

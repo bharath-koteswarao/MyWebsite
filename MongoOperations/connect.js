@@ -7,8 +7,8 @@ var config = require(path.join(__dirname, "..", "config"));
 var MongoClient = require("mongodb").MongoClient;
 
 
-exports.execute = function (callback, req) {
+exports.execute = function (callback, cameFrom) {
     MongoClient.connect(config.mongoUri, function (error, database) {
-        callback(error, database);
+        callback(error, database, cameFrom);
     });
 };

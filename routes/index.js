@@ -11,43 +11,33 @@ var fs = require("fs");
 var request;
 var cameFrom;  // site that redirected user to this
 
-
-var onConnected = function (error, database, request) {
-    database.collection("new").find().toArray(function (p1, p2) {
-        if (!error) insertIpOfThisUser(database);
-    });
-};
-
-function User(ip) {
-    this.ip = ip;
-    this.count = 0;
+function User(cameFrom) {
+    this.cameFrom = cameFrom;
+    this.date = new Date();
 }
 
 
-var insertIpOfThisUser = function (database) {
-
-    var user = new User(userIp(request));
-    var thisIp = user.ip;
-    database.collection(config.mongoCollectionName).find({
-
-    });
+var onConnected = function (error, database, cameFrom) {
+    database.collection(config.mongoCollectionName).insertOne(
+        new User(cameFrom)
+    );
 };
-
 
 /* GET home page. */
 
-router.get('/sites/:cameFrom', function (req, res, next) {
-    //mongoConnector.execute(onConnected);
-    request = req;
+router.get('/:cameFrom', function (req, res, next) {
     cameFrom = req.params['cameFrom'];
-    res.send(cameFrom);
+    fs.readFile(__dirname + "/../public/MyProfile.html", "utf8", function (err, resp) {
+        res.send(resp);
+    });
+    mongoConnector.execute(onConnected, cameFrom);
 });
 
 router.get('/', function (req, res) {
 
     fs.readFile(__dirname + "/../public/MyProfile.html", "utf8", function (err, resp) {
         res.send(resp);
-    })
+    });
 });
 
 router.get('/privacy-policy', function (req, res) {
