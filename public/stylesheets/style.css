@@ -34,11 +34,12 @@ html, body {
     box-shadow: 0 1px 7px 3px rgba(0, 0, 0, 0.3);
     width: 100%;
     height: 20%;
+    opacity: 0;
 }
 
 .bottom-part {
     background-color: #60ad5e;
-    height: 20%;
+    height: 12%;
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -48,7 +49,7 @@ html, body {
 .top-and-bottom {
     width: 100%;
     height: 100%;
-    background-color: #E1E2E1;
+    background-image: url("../images/background_image.jpg");
 }
 
 .content-and-send-button {
@@ -99,12 +100,10 @@ html, body {
     /*top: 10%;*/
 }
 
-/*.drop-a-message {*/
-/*position: absolute;*/
-/*text-align: center;*/
-/*width: 100%;*/
-/*bottom: 13%;*/
-/*}*/
+.vit {
+    color: #2e7d32;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
 
 .content-nav {
     width: 100%;
