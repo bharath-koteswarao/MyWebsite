@@ -11,14 +11,13 @@
 ul.skillbars {
     margin: 0;
     padding-right: 10px;
-    height: 100%;
     overflow: auto;
 }
 
 li.skillbar {
     display: block;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 8px;
     list-style-type: none;
 }
 
