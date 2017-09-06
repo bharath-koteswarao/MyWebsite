@@ -27,7 +27,7 @@ var onConnected = function (error, database, cameFrom) {
 
 router.get('/:cameFrom', function (req, res, next) {
     cameFrom = req.params['cameFrom'];
-    fs.readFile(__dirname + "/../public/MyProfile.html", "utf8", function (err, resp) {
+    fs.readFile(__dirname + "/../public/index.html", "utf8", function (err, resp) {
         res.send(resp);
     });
     mongoConnector.execute(onConnected, cameFrom);
@@ -35,7 +35,14 @@ router.get('/:cameFrom', function (req, res, next) {
 
 router.get('/', function (req, res) {
 
-    fs.readFile(__dirname + "/../public/MyProfile.html", "utf8", function (err, resp) {
+    fs.readFile(__dirname + "/../public/index.html", "utf8", function (err, resp) {
+        res.send(resp);
+    });
+});
+
+router.get('/.well-known/acme-challenge/fzKcjJ5NdfSD5MAUs9bk3u27j9dj8giDCHW28IdS72A', function (req, res) {
+
+    fs.readFile(__dirname + "/../public/google_verification_file", "utf8", function (err, resp) {
         res.send(resp);
     });
 });
