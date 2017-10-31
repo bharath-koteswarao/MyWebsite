@@ -3,28 +3,27 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109032598-1"></script>
-    <script type="text/javascript" src="js/gtag.js"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        console.log("tag");
+        gtag('config', 'UA-109032598-1');
+    </script>
     <title>bharat koteswarao</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="bharat koteswarao,bharat vit,koteswarao,koteswarao vit,bvsbrk,b_vsbrk,
 b_vsbrk hackerrank,bharath koteswarao resume"/>
-    <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link type="text/css" rel="stylesheet" href="css/cm-overlay.css"/>
-
     <link href="css/font-awesome.css" rel="stylesheet">
-
     <link href="//fonts.googleapis.com/css?family=Gidugu" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
           rel='stylesheet' type='text/css'>
-
 </head>
 
 <body>
@@ -463,9 +462,8 @@ b_vsbrk hackerrank,bharath koteswarao resume"/>
          */
 
         $().UItoTop({easingType: 'easeOutQuart'});
-
+        console.log("jq");
     });
 </script>
-<!-- //here ends scrolling icon -->
 </body>
 </html>

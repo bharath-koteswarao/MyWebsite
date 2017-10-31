@@ -8,7 +8,7 @@ var fs = require("fs");
 
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var smart_time_table = require('./routes/smart_time_table');
 
 
 var app = express();
@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/tg', smart_time_table);
 
 
 // catch 404 and forward to error handler
