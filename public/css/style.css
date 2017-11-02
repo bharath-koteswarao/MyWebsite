@@ -1307,6 +1307,18 @@ p.counter {
     }
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-button {
+    background-color: #44c7f4;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #44c7f4;
+}
+
 @media (max-width: 991px) {
     #home {
         min-height: 559px;
