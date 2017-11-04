@@ -244,6 +244,7 @@ input[type="submit"], input[type="reset"], .w3ls_footer_grid_leftl, .w3ls_footer
 }
 
 .main-pic {
+    width: 17%;
     max-width: 30%;
     max-height: 30%;
 }
