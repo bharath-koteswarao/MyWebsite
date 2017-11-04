@@ -243,6 +243,11 @@ input[type="submit"], input[type="reset"], .w3ls_footer_grid_leftl, .w3ls_footer
     font-weight: bold;
 }
 
+.main-pic {
+    max-width: 30%;
+    max-height: 30%;
+}
+
 .events {
     list-style: none;
 }
