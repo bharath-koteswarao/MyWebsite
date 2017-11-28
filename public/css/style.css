@@ -1964,6 +1964,10 @@ p.counter {
         left: 26%;
     }
 
+    .LI-badge-container-horizontal-light {
+        width: 100%;
+    }
+
     .banner img {
         border: 5px solid #44c7f4;
         width: 45%;
