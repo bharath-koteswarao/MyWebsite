@@ -13,6 +13,15 @@
         gtag('config', 'UA-109032598-1');
     </script>
     <script src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(window).on('load', function () { // makes sure the whole site is loaded
+            $('#status').fadeOut(); // will first fade out the loading animation
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+            $('body').delay(350).css({'overflow': 'visible'});
+        })
+        //]]>
+    </script>
     <title>bharat koteswarao</title>
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,6 +50,10 @@ b_vsbrk hackerrank,bharath koteswarao resume"/>
 </head>
 
 <body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
 <div class="main" id="home">
     <div class="banner">
         <img src="images/pic2.png" alt=" " class="img-responsive main-pic">
