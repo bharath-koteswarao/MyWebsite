@@ -22,6 +22,29 @@
         })
         //]]>
     </script>
+    <!-- WhatsHelp.io widget -->
+    <script type="text/javascript">
+        (function () {
+            var options = {
+                facebook: "BksBot", // Facebook page ID
+                company_logo_url: "//static.whatshelp.io/img/flag.png", // URL of company logo (png, jpg, gif)
+                greeting_message: "Hai", // Text of greeting message
+                call_to_action: "Message Me !!", // Call to action
+                position: "right" // Position may be 'right' or 'left'
+            };
+            var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function () {
+                WhWidgetSendButton.init(host, proto, options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+    <!-- /WhatsHelp.io widget -->
     <title>bharat koteswarao</title>
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -223,21 +246,22 @@ b_vsbrk hackerrank,bharath koteswarao resume"/>
         <div class="agileits_portfolio_grids">
             <div class="col-md-4 agileits_portfolio_grid">
                 <div class="agileinfo_portfolio_grid hovereffect">
-                    <a class="cm-overlay" target="_blank"
-                       href="https://play.google.com/store/apps/details?id=com.bharath.vitsubjecttotal">
-                        <img src="images/1.jpg" alt=" " class="img-responsive">
+                    <a class="cm-overlay" href="https://play.google.com/store/apps/details?id=bk.attendancemanager"
+                       target="_blank">
+                        <img src="images/attendance_manager.svg" alt=" " class="img-responsive">
                         <div class="overlay">
-                            <h4>VIT SUBJECT TOTAL</h4>
+                            <h4>Attendance Manager</h4>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="col-md-4 agileits_portfolio_grid">
                 <div class="agileinfo_portfolio_grid hovereffect">
-                    <a class="cm-overlay" href="http://bvsbrk.myartsonline.com/pastie/" target="_blank">
-                        <img src="images/4.jpg" alt=" " class="img-responsive">
+                    <a class="cm-overlay" target="_blank"
+                       href="https://play.google.com/store/apps/details?id=com.bharath.vitsubjecttotal">
+                        <img src="images/1.jpg" alt=" " class="img-responsive">
                         <div class="overlay">
-                            <h4>Copy and Paste :)</h4>
+                            <h4>VIT SUBJECT TOTAL</h4>
                         </div>
                     </a>
                 </div>
